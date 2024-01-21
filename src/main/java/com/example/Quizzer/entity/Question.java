@@ -26,4 +26,6 @@ public class Question {
     private String option2;
     private String option3;
     private String option4;
+    @NotNull
+    private String rightOption;
 }
