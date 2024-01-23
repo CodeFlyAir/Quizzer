@@ -4,6 +4,7 @@ import com.example.Quizzer.entity.Question;
 import com.example.Quizzer.service.QuestionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,12 +16,12 @@ public class QuestionController {
     private QuestionService questionService;
 
     @PostMapping("/save")
-    public Question saveQuestion(@Valid @RequestBody Question question){
+    public ResponseEntity<Question> saveQuestion(@Valid @RequestBody Question question){
         return questionService.saveQuestion(question);
     }
 
     @GetMapping("/allquestions")
-    public List<Question> getAllQuestions() {
+    public ResponseEntity<List<Question>> getAllQuestions() {
         return questionService.getAllQuestions();
     }
 }

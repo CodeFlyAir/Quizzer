@@ -1,11 +1,12 @@
 package com.example.Quizzer.service;
 
 import com.example.Quizzer.entity.Question;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 public interface QuestionService {
-    Question saveQuestion(Question question);
+    ResponseEntity<Question> saveQuestion(Question question);
 
-    List<Question> getAllQuestions();
+    ResponseEntity<List<Question>> getAllQuestions();
 }
